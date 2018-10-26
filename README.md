@@ -7,9 +7,7 @@ Les fonctionnalités sont les suivantes: ajout d'article, ajout de commentaire m
  
  ### Installation
  lancer un terminal de commande et lancer les commandes suivantes:
- git clone https://github.com/matt470/forum_msii3
- cd forum_msii3
- npm install
+ git clone https://github.com/matt470/forum_msii3, cd forum_msii3 et npm install
  
  #### Création des Bdd MySql et MongoDb
  Nom de la bdd MySql : forum_msii
