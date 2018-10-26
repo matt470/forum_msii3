@@ -45,6 +45,24 @@ angular
         });
     };
   }])
+  // Add Article controller
+  .controller('AddArticleController', ['$scope', 'Article',
+      '$state', function($scope, Article, $state) {
+    $scope.action = 'Add';
+    $scope.article = {};
+    $scope.isDisabled = false;
+
+    $scope.submitForm = function() {
+      Article
+        .create({
+          title: $scope.article.title,
+        })
+        .$promise
+        .then(function() {
+          $state.go('all-reviews');
+        });
+    };
+  }])
   .controller('DeleteReviewController', ['$scope', 'Comment', '$state',
       '$stateParams', function($scope, Comment, $state, $stateParams) {
     Comment
