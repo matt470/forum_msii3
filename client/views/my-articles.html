@@ -1,0 +1,13 @@
+<section>
+    <article ng-repeat="r in articles.slice().reverse()">
+      <header>
+        <h1>{{r.title}}</h1>
+      </header>
+  
+      <div class="actions" ng-show="currentUser">
+        <button ui-sref="edit-article({ id: r.id })">Edit</button>
+        <button a ui-sref="delete-article({ id: r.id })">Delete</button>
+      </div>
+    </article>
+  </section>
+  

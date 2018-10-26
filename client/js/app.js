@@ -34,9 +34,20 @@ angular
         controller: 'EditReviewController',
         authenticate: true
       })
+      .state('edit-article', {
+        url: '/edit-article/:id',
+        templateUrl: 'views/article-form.html',
+        controller: 'EditArticleController',
+        authenticate: true
+      })
       .state('delete-review', {
         url: '/delete-review/:id',
         controller: 'DeleteReviewController',
+        authenticate: true
+      })
+      .state('delete-article', {
+        url: '/delete-article/:id',
+        controller: 'DeleteArticleController',
         authenticate: true
       })
       .state('forbidden', {
@@ -56,6 +67,12 @@ angular
         url: '/my-reviews',
         templateUrl: 'views/my-reviews.html',
         controller: 'MyReviewsController',
+        authenticate: true
+      })
+      .state('my-articles', {
+        url: '/my-articles',
+        templateUrl: 'views/my-articles.html',
+        controller: 'MyArticlesController',
         authenticate: true
       })
       .state('sign-up', {
