@@ -72,6 +72,15 @@ angular
         $state.go('my-reviews');
       });
   }])
+  .controller('DeleteArticleController', ['$scope', 'Article', '$state',
+      '$stateParams', function($scope, Article, $state, $stateParams) {
+    Article
+      .deleteById({ id: $stateParams.id })
+      .$promise
+      .then(function() {
+        $state.go('my-reviews');
+      });
+  }])
   .controller('EditReviewController', ['$scope', '$q', 'Article', 'Comment',
       '$stateParams', '$state', function($scope, $q, Article, Comment,
       $stateParams, $state) {
@@ -108,6 +117,28 @@ angular
         });
     };
   }])
+  .controller('EditArticleController', ['$scope', '$q', 'Article',
+  '$stateParams', '$state', function($scope, $q, Article, $stateParams, $state) {
+      $scope.action = 'Edit';
+      $scope.article = {};
+      $scope.isDisabled = true;
+
+    $q
+      .all([
+        Article.findById({ id: $stateParams.id }).$promise
+      ])
+      .then(function(data) {
+         $scope.article = data[0];
+      });
+
+    $scope.submitForm = function() {
+      $scope.article
+        .$save()
+        .then(function(article) {
+          $state.go('all-reviews');
+        });
+    };
+    }])
   .controller('MyReviewsController', ['$scope', 'Comment',
       function($scope, Comment) {
         // after a refresh, the currenUser is not immediately on the scope
@@ -128,4 +159,26 @@ angular
             }
           });
         });
+  }])
+  .controller('MyArticlesController', ['$scope', 'Article',
+      function($scope, Article) {
+        // after a refresh, the currenUser is not immediately on the scope
+        // So, we're watching it on the scope and load my article only then.
+        $scope.$watch('currentUser.id', function(value) {
+          if (!value) {
+            return;
+          }
+          $scope.articles = Article.find({
+            filter: {
+              where: {
+                accountId: $scope.currentUser.id
+              },
+              include: [
+                'account',
+                'comments'
+              ]
+            }
+          });
+        });
   }]);
+  

@@ -18,7 +18,7 @@
       "model": "Comment",
       "foreignKey": ""
     },
-    "accounts": {
+    "account": {
       "type": "belongsTo",
       "model": "Account",
       "foreignKey": "accountId"
