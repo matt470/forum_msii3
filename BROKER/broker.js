@@ -1,9 +1,11 @@
 'use strict';
 const mosca = require('mosca');
+var mqtt = require('mqtt')
+var io = require('socket.io')(30);
 
 const moscaSettings = {
     port: 1883,
-    host: 'localhost',
+    host: 'localhost'
 }
 
 const server = new mosca.Server(moscaSettings); //here we start mosca
@@ -18,9 +20,11 @@ server.on('clientDisconnected', () => {
 
 // fired when a message is received
 server.on('published', function (packet, client) {
-    console.log(`Published on ${packet.topic}`, packet.payload);
+    console.log('Je dois publier les nouveauté aux clients!');
+    
 });
+
 // fired when the mqtt server is ready
 function setup() {
-    console.log('Mosca server is up and running')
+    console.log('Mosca server is up and running');
 }
