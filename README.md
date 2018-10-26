@@ -10,8 +10,11 @@ Les fonctionnalités sont les suivantes: ajout d'article, ajout de commentaire m
  git clone https://github.com/matt470/forum_msii3, cd forum_msii3 et npm install
  
  #### Création des Bdd MySql et MongoDb
+ Avant de lancer l'application vous devez utilsez une base de données Mysql et MongoDB
  Nom de la bdd MySql : forum_msii
+ port Mysql : 3306
  Nom de la bdd MongoDb : forum-msii
+ port MongoDb : 27017
  
  ##### Lancer l'application 
  Dans le terminale lancer la commande suivant : node .
