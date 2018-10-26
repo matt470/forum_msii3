@@ -1,4 +1,4 @@
-# forum_msii2
+# forum_msii3
 Forum d'article en temps réel permettant d'ajouter des articles, de les commenter.
 Les fonctionnalités sont les suivantes: ajout d'article, ajout de commentaire modification ou suppression d'un article et la modification et la suppression d'un commentaire
 
