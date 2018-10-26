@@ -6,4 +6,11 @@ module.exports = function(Comment) {
         context.args.data.accountId = context.req.accessToken.userId;
         next();
       });
+    Comment.afterRemote('create', function(context, account, next) {
+       // Comment.app.mqttClient.publish('presence', 'Hello mqtt');
+        console.log('J\'ai fini d\'envoyé le message');
+        next();
+    });    
 };
+
+
