@@ -14,8 +14,12 @@ Les fonctionnalités sont les suivantes: ajout d'article, ajout de commentaire m
  #### Création des Bdd MySql et MongoDb
  Nom de la bdd MySql : forum_msii
  Nom de la bdd MongoDb : forum-msii
+
+ ##### Lancer le broker MQTT
+ depuis le terminal ouvrir le dossier BROKER: cd BROKER,
+ puis lancer le broker avec la commande node broker.js
  
- ##### Lancer l'application 
+ ###### Lancer l'application 
  Dans le terminale lancer la commande suivant : node .
  
  
