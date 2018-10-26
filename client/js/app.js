@@ -17,6 +17,12 @@ angular
         controller: 'AddReviewController',
         authenticate: true
       })
+      .state('add-article', {
+        url: '/add-article',
+        templateUrl: 'views/article-form.html',
+        controller: 'AddArticleController',
+        authenticate: true
+      })
       .state('all-reviews', {
         url: '/all-reviews',
         templateUrl: 'views/all-reviews.html',
